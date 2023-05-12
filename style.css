@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap'); */
+
+body{
+    height: 100vh;
+    background-color:  hsl(0, 0%, 86%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 8rem;
+    padding-left: 2rem;
+    font-family: 'Poppins';
+    min-width: 375px;
+    width: 90%;
+}
+
+main{
+    
+    width: 27rem;
+    height: 22rem;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 80px;
+}
+
+.class_partI{
+    display: flex;
+    column-gap: 0.6rem;
+    padding-left: 2rem;
+    padding-top: 3rem;
+    font-size: 7px;
+    font-weight: 800;
+    opacity: 60%;
+}
+
+.a{
+    width: 4rem;
+}
+
+#hr{
+    width: 20rem;
+}
+
+.class_partII{
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+}
+
+
+
+.class_partIII{
+    display: flex;
+    flex-direction: column;
+    padding-right: 1.7rem;
+    padding-left: 2rem;
+}
+
+.output{
+    display: flex;
+    column-gap: 0.4rem;
+    font-size: 32px;
+    font-weight: 800;
+    font-style: italic;
+    height: 3rem;
+   
+}
+
+.ct{
+    color: hsl(259, 100%, 65%);
+}
+
+::placeholder{
+    font-weight: 800;
+    text-align: center;
+}
+
+
+
+button{
+    border-radius: 50%;
+    background-color: hsl(259, 100%, 65%);
+    width: 3rem;
+    height: 2.7rem;
+    border: transparent;
+}
+
+button:hover{
+    background-color: black;
+    cursor: pointer;
+}
+
+input{
+    /* font-weight: 800; */
+    font-weight: 800;
+    /* font-size: 32px; */
+}
+
+input[type="number"] {
+    border: 0.5px solid;
+    border-radius: 6%;
+}
+
+svg{
+    width: 100%;
+}
+
+
+
+/*Tornar a pagina responsiva usando media queries
+
+
+
+

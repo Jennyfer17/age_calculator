@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Age calculator app</title>
+ 
+  
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  
+
+  <main>
+
+    <div id="partI" class="class_partI">
+      <div id="id" class="date">
+        <label for="day" id="idDay">DAY</label><br>
+        <input type="number" name="dia" class="a" placeholder="DD" id="td" required>
+        <p class="pa"></p>
+      </div>
+      
+      <div id="im" class="date">
+        <label for="month" id="idMonth">MONTH</label> <br>
+        <input type="number" name="mes"  class="a" placeholder="MM" id="tm" required>
+        <p class="pb"></p>
+      </div>
+      
+      <div id="ia" class="date">
+        <label for="year" id="idYear">YEAR</label><br>
+        <input type="number" name="ano" class="a" placeholder="YYYY" id="ta" required>
+        <p class="pc"></p>
+      </div>
+    </div>
+      
+    <div id="partII" class="class_partII">
+      <div id="hr">
+        <hr>
+      </div>
+      <button class="botao" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="22" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg>
+      </button>
+    </div>
+   
+
+    <div id="partIII" class="class_partIII">
+
+      <div class="output">
+        <p id="trac1" class="ct">- -</p>
+        <p>years</p> 
+      </div>
+
+      <div class="output">
+          <p id="trac2" class="ct">- -</p>
+          <p>months</p>
+        </div>
+
+        <div class="output">
+          <p id="trac3" class="ct">- -</p>
+          <p>days</p>
+        </div>
+
+    </div>
+
+  </main>
+
+
+
+  
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Jennyfer</a>.
+  </footer>
+
+  <script src="codigo.js"></script>
+  
+</body>
+
+</html>
