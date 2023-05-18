@@ -25,34 +25,35 @@ let outYear = document.querySelector("#trac1");
 let outMonth = document.querySelector("#trac2");
 let outDay = document.querySelector("#trac3");
 
-//validacoes
+
+//validating field
 
 function validateDay(){
    let d = day.value;
    let m = month.value;
-   let l1 = emptyDay();
+   let l1 = validateMaxDay();
    let l2 = validateMonth();
    let logic;
  
-   if((l1 == true) && (l2 ==true)){
+   if((l1 == true) && (l2==true)){
       if(m==1 || m==3 || m==5 || m==7 
          || m==8 || m==10 || m==12){
             if(d>31){
-               text1.innerHTML = 'data invalida';
+               text1.innerHTML = 'Must be a valid date';
                changeColor();
                logic = false;
             } else{text1.innerHTML = ''; logic = true;}
       } else{
          if(m==2){
             if(d>29){
-               text1.innerHTML = 'data invalida';
+               text1.innerHTML = 'Must be a valid date';
                changeColor();
                logic = false;
             } else{text1.innerHTML = ''; logic = true;}
          } else{
             if(m==4 || m==6 || m==9 || m==11){
                if(d>30){
-                  text1.innerHTML = 'data invalida';
+                  text1.innerHTML = 'Must be a valid date';
                   changeColor();
                   logic = false;
                } else{text1.innerHTML = ''; logic = true;}
@@ -63,6 +64,25 @@ function validateDay(){
    
    return logic;
 
+}
+
+function validateMaxDay(){
+   let logic;
+   let val = emptyDay();
+
+   if(val==true){
+      if(day.value > 31){
+         text1.innerHTML = 'Must be a valid date';
+         logic = false;
+      }else{
+         text1.innerHTML = '';
+         logic = true;
+      }
+   } else{
+      logic = false;
+   }
+
+   return logic;
 }
 
 function colorReset(){
@@ -79,7 +99,7 @@ function emptyDay(){
    let logic;
 
    if(d == ''){
-      text1.innerHTML = 'preencha este campo';
+      text1.innerHTML = 'This field is required';
       changeColor();
       logic = false;
    } else{text1.innerHTML = ''; logic = true;}
@@ -91,7 +111,7 @@ function emptyMonth(){
    let logic;
 
    if(month.value === ''){
-      text2.innerHTML = 'preencha este campo';
+      text2.innerHTML = 'This field is required';
       changeColor();
       logic = false;
    } else{text2.innerHTML = ''; logic = true;}
@@ -104,7 +124,7 @@ function emptyYear(){
    let logic;
 
    if(y == ''){
-      text3.innerHTML = 'preencha este campo';
+      text3.innerHTML = 'This field is required';
       changeColor();
       logic = false;
    } else{text3.innerHTML = ''; logic = true;}
@@ -118,7 +138,7 @@ function validateMonth(){
 
    if(emptyMonth()==true){
       if(m==0 || m>12){
-         text2.innerHTML = 'mes invalido';
+         text2.innerHTML = 'Must be a valid month';
          changeColor();
          logic = false;
       } else{text2.innerHTML = ''; logic = true;}
@@ -133,7 +153,7 @@ function validateYear(){
    const d = new Date();
    if(emptyYear() == true){
       if (y<1900 || y>d.getFullYear()){
-         text3.innerHTML = 'ano invalido';
+         text3.innerHTML = 'Must be a valid year';
          changeColor();
          logic = false;
       }else{text3.innerHTML = '';
@@ -144,7 +164,7 @@ function validateYear(){
 }
 
 
-//calculo da idade
+//getting the user age
 
 function calcAge(){
    
@@ -158,11 +178,11 @@ function calcAge(){
       let meses = month.value;
       let dias = day.value;
       let anos = year.value;
-      const dataActual = new Date();
+      const currentDate = new Date();
 
-      let aux1 = dataActual.getFullYear() - anos;
-      let aux2 = dataActual.getMonth() - (meses-1); // mes vai de 0 a 11
-      let aux3 = dataActual.getDate() - dias; // dia vai de 1 a 7
+      let aux1 = currentDate.getFullYear() - anos;
+      let aux2 = currentDate.getMonth() - (meses-1); // month is between 0 and 11
+      let aux3 = currentDate.getDate() - dias; // day is between 1 and 7
       aux1 *= 365;
       aux2 *= 30;
       
@@ -185,39 +205,38 @@ function calcAge(){
 }
 function changeColor(){
 
-   labelDay.style.color = 'red';
-   labelMonth.style.color = 'red';
-   labelYear.style.color = 'red';
-   text1.style.color = 'red';
-   text2.style.color = 'red';
-   text3.style.color = 'red';
+   labelDay.style.color = 'hsl(0, 60%, 67%)';
+   labelMonth.style.color = 'hsl(0, 60%, 67%)';
+   labelYear.style.color = 'hsl(0, 60%, 67%)';
+   text1.style.color = 'hsl(0, 60%, 67%)';
+   text2.style.color = 'hsl(0, 60%, 67%)';
+   text3.style.color = 'hsl(0, 60%, 67%)';
 
-   fieldDay.style.borderColor = 'red';
-   fieldMonth.style.borderColor = 'red';
-   fieldYear.style.borderColor = 'red';
+   fieldDay.style.borderColor = 'hsl(0, 60%, 67%)';
+   fieldMonth.style.borderColor = 'hsl(0, 60%, 67%)';
+   fieldYear.style.borderColor = 'hsl(0, 60%, 67%)';
 
 }
 
 function resetState(){
 
-   labelDay.style.color = 'black';
-   labelMonth.style.color = 'black';
-   labelYear.style.color = 'black';
+   labelDay.style.color = 'hsl(0, 1%, 44%)';
+   labelMonth.style.color = 'hsl(0, 1%, 44%)';
+   labelYear.style.color = 'hsl(0, 1%, 44%)';
    
-   text1.style.color = 'black';
-   text2.style.color = 'black';
-   text3.style.color = 'black';
+   // text1.style.color = 'black';
+   // text2.style.color = 'black';
+   // text3.style.color = 'black';
 
-   fieldDay.style.borderColor = 'black';
-   fieldMonth.style.borderColor = 'black';
-   fieldYear.style.borderColor = 'black';
+   fieldDay.style.borderColor = 'hsl(0, 0%, 86%)';
+   fieldMonth.style.borderColor = 'hsl(0, 0%, 86%)';
+   fieldYear.style.borderColor = 'hsl(0, 0%, 86%)';
 
 }
 
 
 
-//button.addEventListener("click", calcAge);
+//adding the event
 
 button.addEventListener("click", calcAge);
 
-//Ver como e que sao chamados as funcoes em JavaScript, principalmente as funcoes do tipo boolean

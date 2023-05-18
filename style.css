@@ -27,6 +27,7 @@ main{
     border-bottom-right-radius: 80px;
 }
 
+
 .class_partI{
     display: flex;
     column-gap: 0.6rem;
@@ -34,7 +35,7 @@ main{
     padding-top: 3rem;
     font-size: 7px;
     font-weight: 800;
-    opacity: 60%;
+    color: hsl(0, 1%, 44%);
 }
 
 .a{
@@ -50,8 +51,6 @@ main{
     align-items: center;
     padding-left: 2rem;
 }
-
-
 
 .class_partIII{
     display: flex;
@@ -94,24 +93,53 @@ button:hover{
     cursor: pointer;
 }
 
-input{
-    /* font-weight: 800; */
-    font-weight: 800;
-    /* font-size: 32px; */
-}
 
 input[type="number"] {
+    height: 25px;
+    font-weight: 800;
+    text-align: center;
     border: 0.5px solid;
     border-radius: 6%;
+    border-color: hsl(0, 0%, 86%);
+    outline: 0;
 }
+
+input[type = "number"]:focus{
+    border-color:  hsl(259, 100%, 65%);
+    cursor: pointer;
+}
+
 
 svg{
     width: 100%;
 }
 
+.attribution { font-size: 11px; text-align: center; }
+
+.attribution a { color: hsl(228, 45%, 44%); }
 
 
-/*Tornar a pagina responsiva usando media queries
+
+/*Responsive webpage*/
+@media (max-width : 500px){
+    main{
+        width: 18rem;
+    }
+
+    .class_partII{
+        padding-top: 15px;
+        padding-right: 0.5rem;
+       
+    }
+
+    .botao{
+        position: absolute;
+        float: right;
+        left: 235px;
+    }
+
+
+}
 
 
 
