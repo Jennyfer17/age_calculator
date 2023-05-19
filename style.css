@@ -106,9 +106,10 @@ input[type="number"] {
 
 input[type = "number"]:focus{
     border-color:  hsl(259, 100%, 65%);
-    cursor: pointer;
 }
-
+input[type="number"]:hover{
+   cursor: pointer; 
+}
 
 svg{
     width: 100%;
@@ -135,7 +136,7 @@ svg{
     .botao{
         position: absolute;
         float: right;
-        left: 235px;
+        left: 225px;
     }
 
 
